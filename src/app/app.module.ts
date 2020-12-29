@@ -1,17 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+
+
+// Importación de Componentes
+import { HomeComponent } from './components/home/home.component';
+import { TareaComponent } from './components/tarea/tarea.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { AboutComponent } from './components/about/about.component';
+
+
+
+// Importación de los servicios
+
+
+
+// Declaracion de las rutas
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    TareaComponent,
+    NavbarComponent,
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

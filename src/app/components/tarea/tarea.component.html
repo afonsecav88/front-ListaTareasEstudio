@@ -1,0 +1,56 @@
+<div class="container mainContainer animated fast fadeIn">
+
+
+    <div class="row">
+
+
+
+        <div class="col-md-12 ">
+            <h3>Cree su nueva tarea</h3>
+            <hr>
+
+            <div class="col-md-12 text-right">
+                <button class=" btn btn-outline-info right" [routerLink]="['/home']"> Regresar</button>
+            </div>
+
+            <form>
+
+                <div class="form-group">
+                    <label>Titulo :</label>
+                    <input type="text" name="" class="form-control" placeholder="Introduzca un título" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción :</label>
+                    <textarea type="text" class="form-control" placeholder="introduzca una descripción" required> </textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Estado :</label>
+
+                    <select name="" id="" class="form-control">
+
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Terminada">Terminada</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <button class=" btn btn-outline-success right" type="submit"> Crear Tarea</button>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+
+
+</div>
