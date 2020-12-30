@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgForm} from '@angular/forms';
+import { Tarea } from '../../Interfaces/tarea.interface';
 
 @Component({
   selector: 'app-tarea',
@@ -14,6 +15,13 @@ export class TareaComponent implements OnInit {
 
 
    }
+
+   tarea: Tarea = {
+    titulo: '',
+    descripcion: '',
+    estado: 'Pendiente'
+
+   };
 
 
   ngOnInit(): void {
