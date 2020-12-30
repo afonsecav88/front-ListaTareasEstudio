@@ -13,24 +13,24 @@
                 <button class=" btn btn-outline-info right" [routerLink]="['/home']"> Regresar</button>
             </div>
 
-            <form>
+
+            <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
 
                 <div class="form-group">
                     <label>Titulo :</label>
-                    <input type="text" name="" class="form-control" placeholder="Introduzca un título" required>
+                    <input class="form-control" type="text" name="titulo" placeholder="Introduzca un título" ngModel required>
                 </div>
 
                 <div class="form-group">
                     <label>Descripción :</label>
-                    <textarea type="text" class="form-control" placeholder="introduzca una descripción" required> </textarea>
+                    <textarea type="text" class="form-control" placeholder="introduzca una descripción" name="descripcion" ngModel required> </textarea>
                 </div>
 
 
                 <div class="form-group">
                     <label>Estado :</label>
 
-                    <select name="" id="" class="form-control">
-
+                    <select name="" id="" class="form-control" name="estado" ngModel>
                     <option value="Pendiente">Pendiente</option>
                     <option value="En Proceso">En Proceso</option>
                     <option value="Terminada">Terminada</option>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button class=" btn btn-outline-success right" type="submit"> Crear Tarea</button>
+                    <button [disabled]="forma.invalid" class=" btn btn-outline-success right" type="submit"> Crear Tarea</button>
                 </div>
 
             </form>

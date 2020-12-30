@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-tarea',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TareaComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {
+
+
+   }
+
 
   ngOnInit(): void {
   }
+guardar(forma: NgForm): void {
+console.log('Funcion guardar ejecutada');
+console.log( 'ngForm' , forma);
+console.log( 'valor' , forma.value);
+  }
+
+
 
 }

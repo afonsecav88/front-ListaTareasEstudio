@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 
+// Importación de modulos para trabajar con formulario
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // Importación de Componentes
 import { HomeComponent } from './components/home/home.component';
@@ -10,7 +13,6 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
-
 
 
 // Importación de los servicios
@@ -28,11 +30,14 @@ import { AppRoutingModule } from './app-routing.module';
     TareaComponent,
     NavbarComponent,
     FooterComponent,
-    AboutComponent
-  ],
+    AboutComponent,
+
+   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
 
   providers: [],
