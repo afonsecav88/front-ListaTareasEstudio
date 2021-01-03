@@ -17,6 +17,9 @@ import { AboutComponent } from './components/about/about.component';
 
 // Importación de los servicios
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 // Declaracion de las rutas
@@ -37,7 +40,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
 
   providers: [],

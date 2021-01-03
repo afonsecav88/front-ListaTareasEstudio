@@ -14,27 +14,28 @@
             </div>
 
 
-            <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+            <form (ngSubmit)="guardar()" #forma="ngForm" novalidate="">
 
                 <div class="form-group">
                     <label>Titulo :</label>
-                    <input class="form-control" type="text" name="titulo" placeholder="Introduzca un título" ngModel required>
+                    <input class="form-control" type="text" name="titulo" placeholder="Introduzca un título" [(ngModel)]="tarea.titulo" required>
                 </div>
 
                 <div class="form-group">
                     <label>Descripción :</label>
-                    <textarea type="text" class="form-control" placeholder="introduzca una descripción" name="descripcion" ngModel required> </textarea>
+                    <textarea type="text" class="form-control" placeholder="Introduzca una descripción" name="descripcion" [(ngModel)]="tarea.descripcion" required> </textarea>
                 </div>
-
 
                 <div class="form-group">
                     <label>Estado :</label>
 
-                    <select name="" id="" class="form-control" name="estado" ngModel>
-                    <option value="Pendiente">Pendiente</option>
-                    <option value="En Proceso">En Proceso</option>
-                    <option value="Terminada">Terminada</option>
+                    <select id="" class="form-control" name="estado" [(ngModel)]="tarea.estado">
+                    <option value="">Seleccione un Estado</option>
+                    <!-- <option [value] ="estado">{{estado[0]}}</option>          
+                    <option [value] ="estado">{{estado[1]}}</option>
+                    <option [value] ="estado">{{estado[2]}}</option> -->
 
+                    <option *ngFor="let item of estado; let i=index">{{estado[i]}}</option>
                     </select>
 
                 </div>
