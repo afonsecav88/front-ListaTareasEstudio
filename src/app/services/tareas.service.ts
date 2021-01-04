@@ -6,6 +6,7 @@ import { Tarea } from '../Interfaces/tarea.interface';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,8 +21,14 @@ nuevaTarea(tarea:Tarea){
   let headers = new HttpHeaders({
   'Content-Type':'application/json' 
   });
+return this.http.post(this.apiURL,fromBody,{ headers}) 
+  
+}
 
-return this.http.post(this.apiURL, fromBody, {headers});
+getConfig() { 
+  return this.http.get(this.apiURL); 
 }
 
 }
+
+

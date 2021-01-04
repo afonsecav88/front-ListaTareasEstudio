@@ -33,16 +33,27 @@ export class TareaComponent implements OnInit {
   ngOnInit(): void {
     
   }
- 
-  guardar(){
- this.srv.nuevaTarea(this.tarea).subscribe(data =>{
-  console.log(data);
- }) 
 
-  }
+getTarea(){
+this.srv.getConfig().subscribe 
+  (data =>
+  {
+  console.log(data);
+  }) 
+
+}
+
+ guardar(){
+  this.srv.nuevaTarea(this.tarea).subscribe(data =>{
+ console.log(data);
+  }) 
+this.tarea.descripcion ="";
+this.tarea.estado ="";
+this.tarea.titulo ="";
+}
+
+
 
 // guardar(): void {
 // console.log( this.tarea);
-
-    
 }
