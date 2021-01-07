@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Tarea } from '../Interfaces/tarea.interface';
-
-
 
 
 @Injectable({
@@ -12,22 +10,24 @@ import { Tarea } from '../Interfaces/tarea.interface';
 })
 export class TareasService {
 
-  apiURL:string = "https://localhost:44308/Tareas";
+  apiURL = 'https://localhost:44308/Tareas';
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-nuevaTarea(tarea:Tarea){
-  let fromBody = JSON.stringify(tarea) ;
-  let headers = new HttpHeaders({
-  'Content-Type':'application/json' 
+  getTareas(): Observable<any> {
+    return this.http.get(this.apiURL);
+  }
+
+// tslint:disable-next-line: typedef
+postTarea(tarea: Tarea){
+  const fromBody = JSON.stringify(tarea) ;
+  const headers = new HttpHeaders({
+  'Content-Type': 'application/json'
   });
-return this.http.post(this.apiURL,fromBody,{ headers}) 
-  
+  return this.http.post(this.apiURL, fromBody, { headers});
+
 }
 
-getConfig() { 
-  return this.http.get(this.apiURL); 
-}
 
 }
 

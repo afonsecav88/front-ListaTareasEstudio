@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TareasService } from '../../services/tareas.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tareasService: TareasService) { }
+
+  tareas: string [] = [];
 
   ngOnInit(): void {
-  }
-
+   this.tareasService.getTareas().subscribe(data => {
+   this.tareas = data;
+    });
+     }
 }

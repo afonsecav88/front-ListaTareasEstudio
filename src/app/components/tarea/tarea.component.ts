@@ -13,12 +13,8 @@ import { TareasService } from '../../services/tareas.service';
 export class TareaComponent implements OnInit {
 
 
-  constructor(private srv:TareasService) {
-  
-   
+  constructor(private tareasService: TareasService) {
    }
-
-
 
   tarea: Tarea = {
   titulo: '',
@@ -26,30 +22,19 @@ export class TareaComponent implements OnInit {
   estado: ''
    };
 
-
-   estado:string [] = ["Pendiente" , "En proceso", "Terminada" ]
-   
+   estado: string [] = [ 'Pendiente', 'En proceso', 'Terminada' ];
 
   ngOnInit(): void {
-    
   }
 
-getTarea(){
-this.srv.getConfig().subscribe 
-  (data =>
-  {
-  console.log(data);
-  }) 
 
-}
-
- guardar(){
-  this.srv.nuevaTarea(this.tarea).subscribe(data =>{
+ guardar(): void{
+  this.tareasService.postTarea(this.tarea).subscribe(data => {
  console.log(data);
-  }) 
-this.tarea.descripcion ="";
-this.tarea.estado ="";
-this.tarea.titulo ="";
+  });
+  this.tarea.descripcion = '';
+  this.tarea.estado = '';
+  this.tarea.titulo = '';
 }
 
 
