@@ -15,12 +15,14 @@ export class HomeComponent implements OnInit {
 
   tareas: Tarea [] ;
 
+  // Metodo para ir a la ruta de Editar una tarea en la BD
  obtenerId(id: number): any{
   console.log(id);
   this.router.navigate(['/edit', `${id}`]);
   }
 
-eliminarTarea(id: number): any{
+  // Metodo para eliminar una tarea en la BD
+  eliminarTarea(id: number): any{
   console.log(id);
   this.router.navigate(['home']).then(() =>  {window.location.reload(); });
   return this.tareasService.deleteTarea(id).subscribe();

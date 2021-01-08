@@ -28,11 +28,12 @@ export class TareasService {
   return this.http.post<Tarea>(this.apiURL, fromBody, { headers});
 }
 
-
+// Metodo para Actualizar una tarea en la BD
 // tslint:disable-next-line: typedef
 putTarea(id: number, tarea: Tarea){
 }
 
+// Metodo para Borrar una tarea en la BD
 // tslint:disable-next-line: typedef
 deleteTarea(id: number){
  const url = `${this.apiURL}/${id}`;
