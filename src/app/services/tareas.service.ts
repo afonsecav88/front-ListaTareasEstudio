@@ -14,18 +14,29 @@ export class TareasService {
 
   constructor(private http: HttpClient) { }
 
-  getTareas(): Observable<any> {
-    return this.http.get(this.apiURL);
+// Metodo para obtener todas las tareas de la BD
+  getTareas(): Observable<Tarea[]> {
+    return this.http.get<Tarea[]>(this.apiURL);
   }
 
-// tslint:disable-next-line: typedef
-postTarea(tarea: Tarea){
+// Metodo para Insertar una tarea en la BD
+  postTarea(tarea: Tarea): Observable<Tarea>{
   const fromBody = JSON.stringify(tarea) ;
   const headers = new HttpHeaders({
   'Content-Type': 'application/json'
   });
-  return this.http.post(this.apiURL, fromBody, { headers});
+  return this.http.post<Tarea>(this.apiURL, fromBody, { headers});
+}
 
+
+// tslint:disable-next-line: typedef
+putTarea(id: number, tarea: Tarea){
+}
+
+// tslint:disable-next-line: typedef
+deleteTarea(id: number){
+ const url = `${this.apiURL}/${id}`;
+ return this.http.delete(url);
 }
 
 

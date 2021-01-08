@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm} from '@angular/forms';
 import { Tarea } from '../../Interfaces/tarea.interface';
 import { TareasService } from '../../services/tareas.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class TareaComponent implements OnInit {
   this.tareasService.postTarea(this.tarea).subscribe(data => {
  console.log(data);
   });
+
   this.tarea.descripcion = '';
   this.tarea.estado = '';
   this.tarea.titulo = '';

@@ -31,10 +31,6 @@
 
                     <select id="" class="form-control" name="estado" [(ngModel)]="tarea.estado">
                     <option value="">Seleccione un Estado</option>
-                    <!-- <option [value] ="estado">{{estado[0]}}</option>          
-                    <option [value] ="estado">{{estado[1]}}</option>
-                    <option [value] ="estado">{{estado[2]}}</option> -->
-
                     <option *ngFor="let item of estado; let i=index">{{estado[i]}}</option>
                     </select>
 

@@ -1,8 +1,11 @@
 <div class=" container  mainContainer animated fast fadeIn">
 
+    <h3 class="text-center">Listado de tareas</h3>
+    <hr>
+
     <button class="btn btn-outline-info button-down btn-sm"><a class="nav-link" [routerLink]="['/nueva-tarea']"><i class="fa fa-plus-circle" aria-hidden="true"></i> Nueva tarea  </a></button>
 
-    <table class="table">
+    <table class="table table-responsive-sm">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -12,24 +15,19 @@
                 <th scope="col">Modificar</th>
             </tr>
         </thead>
-        <tbody *ngIf="tareas">
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+        <tbody>
+            <tr *ngFor="let item of tareas; let i=index">
+                <td>{{[i]}}</td>
+                <td>{{item.titulo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.estado}}</td>
+                <td>
+                    <ul>
+                        <a href="#"><i class="fa fa-edit text-success" title="Modificar" aria-hidden="true"></i></a> &nbsp;
+                        <button class="btn btn-danger" (click)="eliminarTarea(item.id)"><i class="fa fa-trash" aria-hidden="true"></i> </button>
+                    </ul>
+                </td>
+
             </tr>
         </tbody>
     </table>

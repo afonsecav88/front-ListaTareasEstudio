@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 
+
 // Importación de modulos para trabajar con formulario
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Declaracion de las rutas
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
 
   providers: [],
