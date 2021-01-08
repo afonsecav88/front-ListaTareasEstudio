@@ -1,0 +1,34 @@
+<div class="container mainContainer animated fast fadeIn">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Editando una Tarea</h3>
+            <hr>
+
+
+            <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+                <div class="form-group ">
+                    <label for="">Titulo :</label>
+                    <input formControlName="titulo" type="text" id="" class="form-control" placeholder="" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Descripción :</label>
+                    <textarea formControlName="descripcion" class="form-control" id="" required></textarea >
+                </div>
+
+                <div class="form-group">
+                    <label for="">Estado :</label>
+                    <input formControlName="estado" type="text" id="" class="form-control" placeholder="" required>
+                </div>
+
+                <button [disabled]="forma.invalid" class="btn btn-success" type="submit"> <i class="fa fa-check" aria-hidden="true"></i> Editar Tarea</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>

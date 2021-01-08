@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TareasService } from '../../services/tareas.service';
 import { Tarea } from '../../Interfaces/tarea.interface';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -11,10 +11,14 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private tareasService: TareasService, private router: Router) { }
+  constructor(private tareasService: TareasService, private router: Router, private route: ActivatedRoute) { }
 
   tareas: Tarea [] ;
 
+ obtenerId(id: number): any{
+  console.log(id);
+  this.router.navigate(['/edit', `${id}`]);
+  }
 
 eliminarTarea(id: number): any{
   console.log(id);

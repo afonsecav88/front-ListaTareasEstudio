@@ -14,10 +14,10 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 // Importación de los servicios
-
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -28,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { RouterModule } from '@angular/router';
     NavbarComponent,
     FooterComponent,
     AboutComponent,
+    EditComponent,
 
    ],
   imports: [
