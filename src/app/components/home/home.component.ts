@@ -15,15 +15,11 @@ export class HomeComponent implements OnInit {
 
   tareas: Tarea [] ;
 
-contador: number ;
-
 
 eliminarTarea(id: number): any{
   console.log(id);
-  return this.tareasService.deleteTarea(id).subscribe(data => {
-  this.router.navigate(['/home']);
-  }, error => console.error());
-
+  this.router.navigate(['home']).then(() =>  {window.location.reload(); });
+  return this.tareasService.deleteTarea(id).subscribe();
 }
 
   ngOnInit(): void {
