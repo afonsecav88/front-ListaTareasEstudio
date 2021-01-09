@@ -24,6 +24,7 @@
                 <td>
                     <ul>
                         <button class="btn btn-success" (click)="obtenerId(item.id)"> <a [routerLink]="[ 'edit', 'id']"><i class="fa fa-edit text-white" title="Modificar" aria-hidden="true"></i></a></button> &nbsp;
+                        <!-- <button class="btn btn-success" (click)="capturarObjeto(tareas[i])"> <a [routerLink]="[ 'edit', 'id']"><i class="fa fa-edit text-white" title="Modificar" aria-hidden="true"></i></a></button> &nbsp; -->
                         <button class="btn btn-danger" (click)="eliminarTarea(item.id)"><i class="fa fa-trash" aria-hidden="true"></i> </button>
                     </ul>
                 </td>
@@ -32,7 +33,8 @@
         </tbody>
     </table>
 
-    <!-- <i class="fa fa-shower fa-10x " aria-hidden="true"></i>
+    <!-- <span style="color: blue;"><i class="fas fa-horse  fa-10x  "></i></span>
+    <i class="fa fa-shower fa-10x fa-rotate-180" aria-hidden="true"></i>
     <span style="color: red;"><i class="fas fa-fish fa-10x fa-rotate-180"></i></span>
     <span style="color: yellowgreen;"><i class="fa fa-car fa-10x " aria-hidden="true"></i></span>
     <span style="color: tomato;"><i class="fas fa-bus fa-10x    "></i></span>

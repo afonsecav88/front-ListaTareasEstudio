@@ -17,12 +17,7 @@ export class TareaComponent implements OnInit {
   constructor(private tareasService: TareasService) {
    }
 
-  tarea: Tarea = {
-  titulo: '',
-  descripcion: '',
-  estado: ''
-   };
-
+  tarea: Tarea ;
    estado: string [] = [ 'Pendiente', 'En proceso', 'Terminada' ];
 
   ngOnInit(): void {
@@ -30,10 +25,7 @@ export class TareaComponent implements OnInit {
 
 
  guardar(): void{
-  this.tareasService.postTarea(this.tarea).subscribe(data => {
- console.log(data);
-  });
-
+  this.tareasService.postTarea(this.tarea).subscribe();
   this.tarea.descripcion = '';
   this.tarea.estado = '';
   this.tarea.titulo = '';

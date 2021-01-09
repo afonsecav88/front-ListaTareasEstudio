@@ -17,21 +17,24 @@ export class HomeComponent implements OnInit {
 
   // Metodo para ir a la ruta de Editar una tarea en la BD
  obtenerId(id: number): any{
-  console.log(id);
   this.router.navigate(['/edit', `${id}`]);
   }
 
   // Metodo para eliminar una tarea en la BD
   eliminarTarea(id: number): any{
-  console.log(id);
   this.router.navigate(['home']).then(() =>  {window.location.reload(); });
   return this.tareasService.deleteTarea(id).subscribe();
 }
 
+//  // Metodo para capturar objeto de la fila de la tabla y pasarlo al formulario editar
+//   public capturarObjeto(tarea: Tarea []): any{
+//   console.log(tarea);
+//   return tarea;
+//   }
+
   ngOnInit(): void {
    this.tareasService.getTareas().subscribe(data => {
    this.tareas = data;
-   console.log(this.tareas);
     });
      }
 }
