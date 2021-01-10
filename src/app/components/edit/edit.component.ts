@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TareasService } from '../../services/tareas.service';
+import { NotificationsService } from '../../services/notifications.service';
 import { Tarea } from '../../Interfaces/tarea.interface';
 import { Observable } from 'rxjs';
+
 
 
 
@@ -20,7 +22,7 @@ export class EditComponent implements OnInit {
   tarea: Tarea;
   estado: string [] = [ 'Pendiente', 'En proceso', 'Terminada' ];
 
-constructor( private route: ActivatedRoute, private tareasService: TareasService ) {
+constructor( private route: ActivatedRoute, private tareasService: TareasService, private notificationsService: NotificationsService ) {
 this.forma = new FormGroup({
   id : new FormControl (''),
   titulo : new FormControl( '', Validators.required ),
@@ -29,6 +31,7 @@ this.forma = new FormGroup({
 }); }
 
   ngOnInit(): void {
+  this.notificationsService.showSuccess('ok', 'editado');
   this.route.params.subscribe(params => {
   this.id = params.id; });
 
@@ -45,8 +48,10 @@ this.forma = new FormGroup({
   }
 
   guardarCambios( ): void{
-  this.tareasService.putTarea(this.id, this.forma).subscribe(data => {
-   console.log(this.forma.value); });
+ this.tareasService.putTarea(this.id, this.forma).subscribe();
+
+   }
+
   }
 
-}
+

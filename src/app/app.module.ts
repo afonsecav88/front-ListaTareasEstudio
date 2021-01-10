@@ -21,11 +21,13 @@ import { EditComponent } from './components/edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
-
-
 // Declaracion de las rutas
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
+
+// Importación de modulos para notificaciones
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -46,7 +48,9 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule
   ],
 
   providers: [],

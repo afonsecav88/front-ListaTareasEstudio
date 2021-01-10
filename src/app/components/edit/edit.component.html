@@ -5,6 +5,9 @@
             <h3>Editando una Tarea</h3>
             <hr>
 
+            <div class="col-md-12 text-right">
+                <button class=" btn btn-outline-info right" [routerLink]="['/home']"> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Regresar</button>
+            </div>
 
             <form [(formGroup)]="forma" (ngSubmit)="guardarCambios()">
                 <div class="form-group ">
