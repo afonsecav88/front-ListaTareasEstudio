@@ -31,7 +31,6 @@ this.forma = new FormGroup({
 }); }
 
   ngOnInit(): void {
-  this.notificationsService.showSuccess('ok', 'editado');
   this.route.params.subscribe(params => {
   this.id = params.id; });
 
@@ -48,10 +47,12 @@ this.forma = new FormGroup({
   }
 
   guardarCambios( ): void{
- this.tareasService.putTarea(this.id, this.forma).subscribe();
-
+ this.tareasService.putTarea(this.id, this.forma).subscribe(data => {
+  if (!data) {
+    this.notificationsService.showSuccess('Tarea editada correctamente. ', 'OK');
+  }
+ });
    }
-
   }
 
 
