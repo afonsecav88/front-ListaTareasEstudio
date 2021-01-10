@@ -17,7 +17,12 @@ export class TareaComponent implements OnInit {
   constructor(private tareasService: TareasService) {
    }
 
-  tarea: Tarea ;
+  tarea: Tarea = {
+  titulo: '',
+  descripcion: '',
+  estado: ''
+   };
+
    estado: string [] = [ 'Pendiente', 'En proceso', 'Terminada' ];
 
   ngOnInit(): void {

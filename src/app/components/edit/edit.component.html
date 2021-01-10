@@ -19,8 +19,11 @@
 
                 <div class="form-group">
                     <label for="">Estado :</label>
-                    <input formControlName="estado" type="text" id="" class="form-control" placeholder="" required>
-                </div>
+
+                    <select id="" formControlName="estado" type="text"  id="" class="form-control" placeholder="" required>
+                    <option *ngFor="let item of estado; let i=index">{{estado[i]}}</option>
+                    </select>        
+                 </div>
 
                 <button [disabled]="forma.invalid" class="btn btn-success" type="submit"> <i class="fa fa-check" aria-hidden="true"></i> Editar Tarea</button>
 

@@ -18,6 +18,7 @@ export class EditComponent implements OnInit {
   forma: FormGroup;
   id: number;
   tarea: Tarea;
+  estado: string [] = [ 'Pendiente', 'En proceso', 'Terminada' ];
 
 constructor( private route: ActivatedRoute, private tareasService: TareasService ) {
 this.forma = new FormGroup({
