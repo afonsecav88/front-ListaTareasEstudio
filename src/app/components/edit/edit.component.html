@@ -6,7 +6,7 @@
             <hr>
 
 
-            <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+            <form [(formGroup)]="forma" (ngSubmit)="guardarCambios()">
                 <div class="form-group ">
                     <label for="">Titulo :</label>
                     <input formControlName="titulo" type="text" id="" class="form-control" placeholder="" required>
@@ -29,6 +29,5 @@
         </div>
 
         </div>
-  
 
 </div>

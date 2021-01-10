@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { NgForm } from '@angular/forms';
+import { Form, NgForm, FormGroup } from '@angular/forms';
 import { Tarea } from '../Interfaces/tarea.interface';
 
 
@@ -37,13 +37,13 @@ export class TareasService {
 
 // Metodo para Actualizar una tarea en la BD
 // tslint:disable-next-line: typedef
-    putTarea(id: number, tarea: Tarea): Observable<Tarea>{
+    putTarea(id: number, form: FormGroup): Observable<Tarea>{
     const url = `${this.apiURL}/${id}`;
-    const fromBody = JSON.stringify(tarea) ;
+    const fromBody = JSON.stringify(form.value) ;
     const headers = new HttpHeaders({
     'Content-Type': 'application/json'
     });
-    return this.http.post<Tarea>(url, fromBody, { headers});
+    return this.http.put<Tarea>(url, fromBody, { headers});
 
 }
 
